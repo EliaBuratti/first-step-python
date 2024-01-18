@@ -93,4 +93,40 @@ valMean = valNum_sum_for/len(valNum)
 print(valNum_sum_for, valMean)
 
 
+""" range with for loop """
+
+u = int(input('Type a integer number.'))
+
+for i in range(u):
+    print('%d is %s' % (i, 'odd' if i%2 else 'even'))
+
+""" range with for loop and enumarate """
+
+shopping_list = ['tofu', 'yogurt', 'milk', 'soy']
+
+print(list(enumerate(shopping_list))) 
+""" [(0, 'tofu'), (1, 'yogurt'), (2, 'milk'), (3, 'soy')] """
+
+
+""" break and continue """
+
+shopping_list_food = ['tofu', 'yogurt', 'milk', 'soy', 'cereal', 'rice']
+
+for i, item in enumerate(shopping_list_food):
+
+    if 'cereal' in item:
+        break
+
+    print(f'{i+1}) {item}')
+
+
+for i, item in enumerate(shopping_list_food):
+
+    if 'cereal' in item:
+        continue
+
+    print(f'{i+1}) {item}')
+
+print('End of list')
+
 
