@@ -129,4 +129,109 @@ for i, item in enumerate(shopping_list_food):
 
 print('End of list')
 
+""" potency """
 
+p = int(input('type a number between 1 or 20'))
+
+if p<1 or p>20:
+
+    print('The number must be between 1 or 20!')
+else:
+    for i in range(p):
+        print(i**2)
+
+
+""" pick second number greater """
+
+numbers=  '2 3 4 5 6 6 7 8'
+
+numbers= numbers.split()
+
+numbers= set(map(int, numbers))
+""" 'set' is used to remove duplicate, otherwise 'list' don't remove duplicate """
+
+for i in numbers :
+
+    greater = 0
+
+    for j in numbers:
+
+        if i<j :
+            greater+=1
+    if greater==1:
+        break
+print(i)
+
+""" other solution to ex """
+
+numbers_1=  '2 3 4 5 6 6 7 8'
+
+numbers_1= numbers_1.split()
+
+numbers_1= set(map(int, numbers_1))
+""" 'set' removes duplicate but lost order, otherwise 'dict.fromkeys' remove duplicate and mantain order """
+
+numbers_1= list(numbers_1)
+
+""" numbers_1.sort() to order asc """
+
+""" numbers_1.sort(reverse=True) to order desc """
+
+numbers_1.sort(reverse=True)
+
+print(numbers_1[1])
+
+
+""" class register """
+""" 
+example of record input:
+
+Mario 67 80 45 75
+Luigi 60 55 70 90
+Pietro 67 68 70 72
+
+ """
+students_votes = {}
+
+n = int(input('Number of student'))
+
+""" underscore used if not want tu use index for loop """
+
+for _ in range(n):
+
+    record = input('Record')
+    record = record.split()
+    name = record[0]
+    """ record[1:] used to select all values after first """
+    votes = list(map(float, record[1:]))
+    students_votes[name] = votes
+
+students_name = input('Student name to calculate average')
+
+avg = sum(students_votes[students_name])/len(students_votes[students_name])
+
+print(f'{avg:.2f}')
+
+""" palindrome ex """
+
+word = input('Write a word: ')
+
+while word!='stop':
+
+    word_palindrome = True
+    word_lenght = len(word)
+
+    for i in range(word_lenght):
+
+        j = word_lenght-1-i
+
+        if word[i]!=word[j]:
+            word_palindrome = False
+            break
+    
+    if word_palindrome:
+        print(f'{word} is palindrome')
+    else:
+        print(f'{word} it\'s not a palindrome')
+    
+    word = input('Write a word: ')
